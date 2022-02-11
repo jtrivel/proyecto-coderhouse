@@ -1,0 +1,118 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.nav {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 0.3rem;
+
+  @include m.tablet {
+    flex-direction: row;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 6rem;
+    width: 20rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: v.$white;
+    position: relative;
+    border: 1px solid v.$white;
+    border-width: 1px 1px 0 1px;
+    transition: border 1s ease;
+    @include m.tablet { 
+      width: 15rem;
+    }
+    @include m.desktop {
+      width: 20rem;
+    }
+
+    &:last-of-type {
+      border-width: 1px 1px 1px 1px;
+    }
+    &:hover:nth-child(1) {
+      border: 1px solid transparent;  
+    }
+    &:hover:nth-child(2) {
+      border: 1px solid transparent;  
+    }
+    &:hover:nth-child(3) {
+      border: 1px solid transparent;  
+    }
+    &:hover:nth-child(4) {
+      border: 1px solid transparent;  
+    }
+
+    @include m.tablet {
+      border-width: 1px 0 1px 1px;
+    }
+  }
+
+  &__span {
+    display: block;
+    position: absolute;
+    background-color: v.$white;
+
+    &:nth-child(1) {
+      left: 0;
+      bottom: 0;
+      width: 1px;
+      height: 100%;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.5s;
+    }
+    &:nth-child(2) {
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.5s;
+    }
+    &:nth-child(3) {
+      right: 0;
+      bottom: 0;
+      width: 1px;
+      height: 100%;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.5s;
+      transition-delay: 0.5s;
+    }
+    &:nth-child(4) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.5s;
+      transition-delay: 0.5s;
+    }
+  }
+}
+
+a:hover .nav__span:nth-child(1) {
+  transform: scaleY(1);
+  transform-origin: bottom;
+}
+
+a:hover .nav__span:nth-child(2) {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+a:hover .nav__span:nth-child(3) {
+  transform: scaleY(1);
+  transform-origin: bottom;
+}
+a:hover .nav__span:nth-child(4) {
+  transform: scaleX(1);
+  transform-origin: left;
+}

@@ -1,0 +1,134 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.testimoniales {
+	&__grid {
+		@include m.grid(1, 5rem);
+	}
+
+	&__top {
+		display: grid;
+		place-items: center;
+	}
+
+	&__header {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 1.8rem;
+		letter-spacing: 0.4rem;
+		max-width: 40rem;
+		line-height: 2;
+		@include m.tablet {
+			max-width: 60rem;
+			font-size: 2rem;
+		}
+
+		@include m.desktop {
+			max-width: 80rem;
+			font-size: 3.2rem;
+		}
+	}
+
+	&__span {
+		display: block;
+	}
+
+	&__bottom {
+		@include m.grid(1, 8rem);
+		place-items: center;
+
+		@include m.tablet {
+			@include m.grid(2, 10rem);
+		}
+
+		@include m.desktop {
+			@include m.grid(3, 5rem);
+		}
+	}
+
+	&__box {
+		height: 100%;
+		position: relative;
+		max-width: 45rem;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		background-color: v.$whiteGlass;
+		backdrop-filter: blur(5px);
+		border: 1px solid transparent;
+		transition: border 250ms ease-in-out;
+		cursor: pointer;
+		z-index: 1;
+
+		@include m.tablet {
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		&::before {
+			position: absolute;
+			content: '\201C';
+			font-size: 10rem;
+			left: 2px;
+			top: 0;
+			opacity: 0.5;
+			@include m.desktop {
+				font-size: 15rem;
+				top: -2rem;
+			}
+		}
+
+		&:hover {
+			border: 1px solid v.$white;
+		}
+
+		@include m.tablet {
+		}
+	}
+
+	&__img {
+		object-fit: cover;
+		object-position: center right;
+		width: 10rem;
+		height: 10rem;
+		clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+		margin-top: -5rem;
+		filter: grayscale(1);
+		transition: all 250ms ease-in;
+	}
+
+	&__box:hover &__img {
+		filter: none;
+	}
+
+	&__review {
+	}
+
+	&__user {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 1rem;
+	}
+
+	&__name {
+		font-size: 1.6rem;
+		font-weight: 600;
+	}
+
+	&__country {
+		width: 3rem;
+		aspect-ratio: 16/10;
+		filter: grayscale(1);
+		transition: filter 250ms ease-in;
+	}
+
+	&__box:hover &__country {
+		filter: grayscale(0);
+	}
+}
