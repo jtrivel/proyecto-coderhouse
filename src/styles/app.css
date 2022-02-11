@@ -2028,8 +2028,9 @@ a:hover .nav__span:nth-child(4) {
 @media (min-width: 1024px) {
   .footer__grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 4rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 110rem;
   }
 }
 .footer__box {
@@ -2092,6 +2093,7 @@ a:hover .nav__span:nth-child(4) {
   color: white;
   text-decoration: none;
   position: relative;
+  white-space: nowrap;
 }
 @media (min-width: 450px) {
   .footer__link {
@@ -2106,6 +2108,12 @@ a:hover .nav__span:nth-child(4) {
   background-color: white;
   left: 0;
   bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease-out;
+}
+.footer__link:hover::before {
+  transform: scaleX(1);
 }
 .footer__attribution {
   margin-top: 4rem;

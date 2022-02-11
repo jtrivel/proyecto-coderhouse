@@ -19,7 +19,8 @@
 		}
 
 		@include m.desktop {
-			@include m.grid(5, 4rem);
+			@include m.grid(4, 1rem);
+			max-width: 110rem;
 		}
 	}
 
@@ -82,6 +83,7 @@
 		color: v.$white;
 		text-decoration: none;
 		position: relative;
+		white-space: nowrap;
 
 		@media (min-width: 450px) {
 			align-self: flex-start;
@@ -95,6 +97,13 @@
 			background-color: v.$white;
 			left: 0;
 			bottom: 0;
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 250ms ease-out;
+		}
+
+		&:hover::before {
+			transform: scaleX(1);
 		}
 	}
 
