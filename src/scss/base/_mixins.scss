@@ -1,64 +1,60 @@
-@use 'variables' as v ;
+@use 'variables' as v;
 
 @mixin xsmall {
-  @media(min-width: v.$xsmall) {
-    @content;
-  }
+	@media (min-width: v.$xsmall) {
+		@content;
+	}
 }
 
 @mixin mobile {
-  @media(min-width: v.$mobile){
-    @content;
-  }
+	@media (min-width: v.$mobile) {
+		@content;
+	}
 }
 
 @mixin tablet {
-  @media(min-width: v.$tablet){
-    @content;
-  }
+	@media (min-width: v.$tablet) {
+		@content;
+	}
 }
 
 @mixin desktop {
-  @media(min-width: v.$desktop){
-    @content;
-  }
+	@media (min-width: v.$desktop) {
+		@content;
+	}
 }
 
 @mixin desktopxl {
-  @media(min-width: v.$desktopxl){
-    @content;
-  }
+	@media (min-width: v.$desktopxl) {
+		@content;
+	}
 }
 
-@mixin btn($color,$bgColor) {
-  color: $color;
-  background-color: $bgColor;
-  padding: 1rem;
-  border: none;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 0.2rem;
-  white-space: nowrap;
-  cursor: pointer;
-  font-size: 1.2rem;
-  border-radius: 0.4rem;
-  font-weight: 600;
-  display: block;
+@mixin btn($color, $bgColor) {
+	color: $color;
+	background-color: $bgColor;
+	padding: 1rem;
+	border: none;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 0.2rem;
+	white-space: nowrap;
+	cursor: pointer;
+	font-size: 1.2rem;
+	border-radius: 0.4rem;
+	font-weight: 600;
+	display: block;
 }
 
-
-
-@mixin grid($col,$gap) {
-  display: grid;
-  grid-template-columns: repeat($col,1fr);
-  gap: $gap;
+@mixin grid($col, $gap) {
+	display: grid;
+	grid-template-columns: repeat($col, 1fr);
+	gap: $gap;
 }
-
 
 @mixin flexCenter($direction) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: $direction;
+	justify-content: center;
+	align-items: center;
 }
-

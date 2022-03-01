@@ -1,0 +1,66 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.landing {
+	min-height: 100vh;
+	min-width: 100vw;
+	background: transparent;
+	background-size: cover, cover;
+	background-repeat: no-repeat;
+	background-position: center center, center center;
+	background-attachment: fixed;
+	@include m.flexCenter(row);
+
+	&__box {
+		@include m.flexCenter(column);
+		padding: 2rem;
+		gap: 1rem;
+		text-transform: map-get(v.$landingText, transform);
+		text-align: map-get(v.$landingText, align);
+		max-width: 42rem;
+
+		@media (min-width: 524px) {
+			max-width: 52rem;
+		}
+
+		@include m.tablet {
+			max-width: 65rem;
+		}
+
+		@include m.desktop {
+			max-width: none;
+		}
+	}
+
+	&__heading {
+		animation: tourHeading 1s cubic-bezier(0.76, 0, 0.24, 1);
+	}
+
+	&__subheading {
+		animation: tourSubheading 1s cubic-bezier(0.76, 0, 0.24, 1);
+		@include m.tablet {
+			max-width: 52rem;
+		}
+		@include m.desktop {
+			max-width: none;
+		}
+	}
+
+	&--nosotros {
+		@extend .landing;
+		background-image: linear-gradient(to bottom, v.$black, v.$black),
+			url(../images/nosotrosBg.jpg);
+	}
+
+	&--tour {
+		@extend .landing;
+		background-image: linear-gradient(to bottom, v.$black, v.$black),
+			url(../images/tourBg.jpg);
+	}
+
+	&--contacto {
+		@extend .landing;
+		background-image: linear-gradient(to bottom, v.$black, v.$black),
+			url(../images/contactoBg.jpg);
+	}
+}

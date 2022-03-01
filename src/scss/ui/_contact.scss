@@ -2,31 +2,13 @@
 @use '../base/mixins' as m;
 
 .contacto {
-	display: grid;
-	place-items: center;
 	overflow-x: hidden;
-	background-color: v.$black;
-
-	&__bg {
-		min-height: 100vh;
-		width: 100%;
-		background: linear-gradient(to bottom, v.$black, v.$black),
-			url(../images/contactoBg.jpg);
-		background-repeat: no-repeat;
-		background-size: cover, cover;
-		background-attachment: fixed;
-		background-position: center center, center center;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	&__header {
-		text-align: center;
-	}
+	display: grid;
 }
 
 .form {
+	align-self: center;
+	justify-self: center;
 	margin: 5rem 0;
 	@include m.desktop {
 		margin: 10rem 0;
