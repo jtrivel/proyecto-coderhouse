@@ -1,12 +1,11 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
+@use '../base/typography';
 
 .tour {
 	overflow-x: hidden;
 
 	&__main {
-		min-height: 100vh;
-		background-size: cover;
 		padding: 5rem 0;
 		@include m.tablet {
 			padding: 10rem 0;
@@ -102,6 +101,10 @@
 
 	&__heading {
 		line-height: 1.5;
+		@extend .fs-600;
+		&:before {
+			width: 0;
+		}
 	}
 
 	&__link {
@@ -122,12 +125,22 @@
 
 ////////////////////// POPULAR ///////////////////////////
 .popular {
-	width: 100%;
 	max-width: 140rem;
+	display: grid;
+	place-items: center;
 
-	&__header {
+	&__heading {
+		@extend .fs-600;
 		text-align: center;
-		padding: 4rem 0;
+		white-space: normal;
+		margin-bottom: 4rem;
+		&::before {
+			width: 40%;
+			left: 50%;
+			right: 50%;
+			bottom: -1rem;
+			transform: translate(-50%, -50%);
+		}
 	}
 
 	&__grid {

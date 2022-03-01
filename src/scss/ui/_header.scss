@@ -40,6 +40,7 @@
 		border: 1px solid v.$white;
 		border-width: 1px 0 1px 0;
 		position: relative;
+		text-transform: uppercase;
 		&::before {
 			position: absolute;
 			content: '';

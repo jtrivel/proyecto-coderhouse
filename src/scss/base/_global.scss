@@ -7,7 +7,10 @@ html {
 
 body {
 	font-family: v.$primaryFont;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
+	@include m.tablet {
+		font-size: 1.6rem;
+	}
 	font-weight: 300;
 	color: v.$white;
 	background: linear-gradient(to bottom, v.$black, v.$black),

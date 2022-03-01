@@ -1,36 +1,20 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
+@use '../base/typography';
 
 .testimoniales {
 	&__grid {
-		@include m.grid(1, 5rem);
+		@include m.grid(1, 4rem);
 	}
 
 	&__top {
-		display: grid;
-		place-items: center;
-	}
-
-	&__header {
+		@include m.flexCenter(row);
+		@extend .fs-600;
+		white-space: normal;
 		text-align: center;
-		text-transform: uppercase;
-		font-size: 1.8rem;
-		letter-spacing: 0.4rem;
-		max-width: 40rem;
-		line-height: 2;
-		@include m.tablet {
-			max-width: 60rem;
-			font-size: 2rem;
+		&:before {
+			width: 0;
 		}
-
-		@include m.desktop {
-			max-width: 80rem;
-			font-size: 3.2rem;
-		}
-	}
-
-	&__span {
-		display: block;
 	}
 
 	&__bottom {
@@ -51,10 +35,7 @@
 		position: relative;
 		max-width: 45rem;
 		padding: 2rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		@include m.flexCenter(column);
 		gap: 1rem;
 		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 		background-color: v.$whiteGlass;
@@ -85,9 +66,6 @@
 		&:hover {
 			border: 1px solid v.$white;
 		}
-
-		@include m.tablet {
-		}
 	}
 
 	&__img {
@@ -105,9 +83,6 @@
 		filter: none;
 	}
 
-	&__review {
-	}
-
 	&__user {
 		width: 100%;
 		display: flex;
@@ -123,7 +98,7 @@
 
 	&__country {
 		width: 3rem;
-		aspect-ratio: 16/10;
+		aspect-ratio: 16/9;
 		filter: grayscale(1);
 		transition: filter 250ms ease-in;
 	}

@@ -83,7 +83,7 @@ html {
 
 body {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 300;
   color: white;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/mainBg.jpg);
@@ -93,6 +93,11 @@ body {
   background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.5);
   position: relative;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
 }
 
 .landing {
@@ -157,7 +162,7 @@ h2 {
   font-weight: 300;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
-  line-height: 2.5;
+  line-height: 1.5;
 }
 @media (min-width: 768px) {
   h2 {
@@ -171,46 +176,51 @@ h2 {
   }
 }
 
-.f-600 {
+.fs-600, .calendar__text, .features__heading, .popular__heading, .testimoniales__top, .team__header, .nosotros__title {
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 0.7rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  white-space: nowrap;
+  position: relative;
 }
 @media (min-width: 768px) {
-  .f-600 {
+  .fs-600, .calendar__text, .features__heading, .popular__heading, .testimoniales__top, .team__header, .nosotros__title {
     font-size: 2.4rem;
     letter-spacing: 0.8rem;
   }
 }
 @media (min-width: 1024px) {
-  .f-600 {
+  .fs-600, .calendar__text, .features__heading, .popular__heading, .testimoniales__top, .team__header, .nosotros__title {
     font-size: 3.2rem;
-    letter-spacing: 1rem;
   }
 }
+.fs-600:before, .calendar__text:before, .features__heading:before, .popular__heading:before, .testimoniales__top:before, .team__header:before, .nosotros__title:before {
+  position: absolute;
+  content: "";
+  width: 98%;
+  height: 2px;
+  background-color: white;
+  left: 0;
+  bottom: 0rem;
+}
 
-.fs-500 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: 0.4rem;
+.fs-1 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  line-height: 1.5;
 }
 @media (min-width: 768px) {
-  .fs-500 {
-    font-size: 2.2rem;
+  .fs-1 {
+    font-size: 1.3rem;
   }
 }
 @media (min-width: 1400px) {
-  .fs-500 {
-    font-size: 2.5rem;
-  }
-}
-
-p {
-  font-size: 1.4rem;
-}
-@media (min-width: 768px) {
-  p {
-    font-size: 1.6rem;
+  .fs-1 {
+    font-size: 1.7rem;
+    letter-spacing: 0.4rem;
   }
 }
 
@@ -613,8 +623,8 @@ p {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   text-align: center;
   width: 100%;
@@ -731,6 +741,7 @@ p {
   border: 1px solid white;
   border-width: 1px 0 1px 0;
   position: relative;
+  text-transform: uppercase;
 }
 .header__content::before {
   position: absolute;
@@ -945,20 +956,31 @@ p {
 .nosotros__title {
   align-self: start;
   justify-self: start;
-  border-bottom: 1px white solid;
 }
-.nosotros__text {
-  margin-top: 2rem;
+@media (min-width: 1024px) {
+  .nosotros__text {
+    font-size: 1.8rem;
+  }
+}
+.nosotros__text:not(:last-child) {
+  margin-bottom: 4rem;
 }
 .nosotros__grid {
   display: grid;
   place-items: center;
+  gap: 4rem;
   padding: 5rem 0;
-  gap: 10rem;
+}
+@media (min-width: 768px) {
+  .nosotros__grid {
+    padding: 10rem 0;
+    gap: 10rem;
+  }
 }
 @media (min-width: 1024px) {
   .nosotros__grid {
-    padding: 10rem 0;
+    padding: 15rem 0;
+    gap: 15rem;
   }
 }
 
@@ -979,26 +1001,14 @@ p {
     gap: 1rem;
   }
 }
+.team__header {
+  justify-self: start;
+}
 .team__box {
   position: relative;
   transition: all 250ms ease;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.team__box:nth-child(1) {
-  align-self: start;
-  justify-self: start;
-  margin-bottom: 2rem;
-  grid-column: 1/3;
-  box-shadow: none;
-}
-@media (min-width: 768px) {
-  .team__box:nth-child(1) {
-    grid-column: 1/4;
-  }
-}
-.team__header {
-  border-bottom: 1px solid white;
 }
 .team__img {
   -o-object-fit: cover;
@@ -1287,34 +1297,18 @@ p {
 .testimoniales__grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 5rem;
+  gap: 4rem;
 }
 .testimoniales__top {
-  display: grid;
-  place-items: center;
-}
-.testimoniales__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  white-space: normal;
   text-align: center;
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  letter-spacing: 0.4rem;
-  max-width: 40rem;
-  line-height: 2;
 }
-@media (min-width: 768px) {
-  .testimoniales__header {
-    max-width: 60rem;
-    font-size: 2rem;
-  }
-}
-@media (min-width: 1024px) {
-  .testimoniales__header {
-    max-width: 80rem;
-    font-size: 3.2rem;
-  }
-}
-.testimoniales__span {
-  display: block;
+.testimoniales__top:before {
+  width: 0;
 }
 .testimoniales__bottom {
   display: grid;
@@ -1407,7 +1401,7 @@ p {
 }
 .testimoniales__country {
   width: 3rem;
-  aspect-ratio: 16/10;
+  aspect-ratio: 16/9;
   filter: grayscale(1);
   transition: filter 250ms ease-in;
 }
@@ -1419,8 +1413,6 @@ p {
   overflow-x: hidden;
 }
 .tour__main {
-  min-height: 100vh;
-  background-size: cover;
   padding: 5rem 0;
   display: grid;
   place-items: center;
@@ -1524,6 +1516,9 @@ p {
 .features__heading {
   line-height: 1.5;
 }
+.features__heading:before {
+  width: 0;
+}
 .features__link {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   text-decoration: none;
@@ -1539,12 +1534,21 @@ p {
 }
 
 .popular {
-  width: 100%;
   max-width: 140rem;
+  display: grid;
+  place-items: center;
 }
-.popular__header {
+.popular__heading {
   text-align: center;
-  padding: 4rem 0;
+  white-space: normal;
+  margin-bottom: 4rem;
+}
+.popular__heading::before {
+  width: 40%;
+  left: 50%;
+  right: 50%;
+  bottom: -1rem;
+  transform: translate(-50%, -50%);
 }
 .popular__grid {
   display: grid;
@@ -1715,20 +1719,22 @@ p {
 .calendar {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 5rem;
+  gap: 4rem;
   place-items: center;
-  width: 100%;
 }
 .calendar__top {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 2rem;
+  align-items: center;
   text-transform: uppercase;
   text-align: center;
-  padding: 1rem 0;
+}
+.calendar__text {
+  white-space: normal;
+}
+.calendar__text:before {
+  width: 0;
 }
 .calendar__season {
   transition: all 0.6s cubic-bezier(0.37, 0, 0.63, 1);
@@ -1747,14 +1753,15 @@ p {
 }
 .calendar__box {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 @media (min-width: 768px) {
   .calendar__box {
-    gap: 3rem;
+    gap: 4rem;
   }
 }
 .calendar__month {

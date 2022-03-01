@@ -20,7 +20,7 @@ h2 {
 	font-weight: 300;
 	font-size: 1.2rem;
 	letter-spacing: 0.2rem;
-	line-height: 2.5;
+	line-height: 1.5;
 
 	@include m.tablet {
 		font-size: 1.3rem;
@@ -32,35 +32,45 @@ h2 {
 	}
 }
 
-.f-600 {
+.fs-600 {
 	font-size: 1.8rem;
 	font-weight: 600;
 	letter-spacing: 0.7rem;
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+	white-space: nowrap;
+	position: relative;
 	@include m.tablet {
 		font-size: 2.4rem;
 		letter-spacing: 0.8rem;
 	}
 	@include m.desktop {
 		font-size: 3.2rem;
-		letter-spacing: 1rem;
+	}
+
+	&:before {
+		position: absolute;
+		content: '';
+		width: 98%;
+		height: 2px;
+		background-color: v.$white;
+		left: 0;
+		bottom: 0rem;
 	}
 }
 
-.fs-500 {
-	font-size: 1.8rem;
-	font-weight: 600;
-	letter-spacing: 0.4rem;
+.fs-1 {
+	font-weight: 300;
+	font-size: 1.2rem;
+	letter-spacing: 0.2rem;
+	line-height: 1.5;
+
 	@include m.tablet {
-		font-size: 2.2rem;
+		font-size: 1.3rem;
 	}
+
 	@include m.desktopxl {
-		font-size: 2.5rem;
-	}
-}
-
-p {
-	font-size: 1.4rem;
-	@include m.tablet {
-		font-size: 1.6rem;
+		font-size: 1.7rem;
+		letter-spacing: 0.4rem;
 	}
 }

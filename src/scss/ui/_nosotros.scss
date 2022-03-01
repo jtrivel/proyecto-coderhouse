@@ -1,5 +1,6 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
+@use '../base/typography';
 
 .nosotros {
 	overflow-x: hidden;
@@ -10,22 +11,32 @@
 	}
 
 	&__title {
+		@extend .fs-600;
 		align-self: start;
 		justify-self: start;
-		border-bottom: 1px v.$white solid;
 	}
 
 	&__text {
-		margin-top: 2rem;
+		@include m.desktop {
+			font-size: 1.8rem;
+		}
+		&:not(:last-child) {
+			margin-bottom: 4rem;
+		}
 	}
 
 	&__grid {
 		display: grid;
 		place-items: center;
+		gap: 4rem;
 		padding: 5rem 0;
-		gap: 10rem;
-		@include m.desktop {
+		@include m.tablet {
 			padding: 10rem 0;
+			gap: 10rem;
+		}
+		@include m.desktop {
+			padding: 15rem 0;
+			gap: 15rem;
 		}
 	}
 }
