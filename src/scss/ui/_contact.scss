@@ -1,18 +1,27 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
+@use '../base/typography';
 
 .contacto {
 	overflow-x: hidden;
 	display: grid;
+	place-items: center;
+
+	&__grid {
+		padding: 5rem 0;
+		@include m.grid(1, 0rem);
+
+		@include m.tablet {
+			padding: 10rem 0;
+			@include m.grid(2, 0rem);
+		}
+		@include m.desktop {
+			padding: 15rem 0;
+		}
+	}
 }
 
 .form {
-	align-self: center;
-	justify-self: center;
-	margin: 5rem 0;
-	@include m.desktop {
-		margin: 10rem 0;
-	}
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -31,7 +40,7 @@
 
 	&__heading {
 		align-self: flex-start;
-		border-bottom: 1px solid v.$white;
+		@extend .fs-600;
 	}
 
 	&__field {
@@ -134,7 +143,6 @@
 		@include m.tablet {
 			font-size: 1.3rem;
 			margin-top: 0;
-			width: 20%;
 		}
 		@include m.desktop {
 			font-size: 1.7rem;
@@ -147,5 +155,105 @@
 		&:hover {
 			background-color: v.$whiteGlass;
 		}
+	}
+}
+
+////////////////////////// FAQ /////////////////////////
+
+.faq {
+	max-width: 50rem;
+	background-color: v.$black;
+	border-radius: 0.4rem;
+	padding: 5rem;
+	backdrop-filter: blur(5px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 2rem;
+	@include m.tablet {
+		max-width: 70rem;
+	}
+
+	&__title {
+		@extend .fs-600;
+	}
+
+	&__text {
+		overflow: hidden;
+	}
+
+	#faq-1 {
+		display: none;
+	}
+
+	&__label {
+		position: relative;
+		padding-left: 2rem;
+		@extend .fs-4;
+		cursor: pointer;
+
+		&:before {
+			width: 0;
+		}
+		&::after {
+			position: absolute;
+			content: '';
+			left: 0;
+		}
+
+		&::after {
+			position: absolute;
+			content: '';
+			left: 0;
+			border-left: 8px solid v.$white;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-right: 8px solid transparent;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			box-shadow: v.$mainShadow;
+		}
+	}
+
+	&__text-1 {
+		max-height: 0;
+	}
+
+	#faq-1:checked ~ &__text-1 {
+		max-height: 100%;
+	}
+
+	#faq-2 {
+		display: none;
+	}
+	&__text-2 {
+		max-height: 0;
+	}
+
+	#faq-2:checked ~ &__text-2 {
+		max-height: 100%;
+	}
+
+	#faq-3 {
+		display: none;
+	}
+	&__text-3 {
+		max-height: 0;
+	}
+
+	#faq-3:checked ~ &__text-3 {
+		max-height: 100%;
+	}
+
+	#faq-4 {
+		display: none;
+	}
+	&__text-4 {
+		max-height: 0;
+	}
+
+	#faq-4:checked ~ &__text-4 {
+		max-height: 100%;
 	}
 }

@@ -74,3 +74,20 @@ h2 {
 		letter-spacing: 0.4rem;
 	}
 }
+
+.fs-4 {
+	font-weight: 600;
+	font-size: 1.6rem;
+	letter-spacing: 0.2rem;
+	line-height: 1.5;
+	text-transform: uppercase;
+
+	@include m.tablet {
+		font-size: 1.8rem;
+	}
+
+	@include m.desktopxl {
+		font-size: 2rem;
+		letter-spacing: 0.4rem;
+	}
+}

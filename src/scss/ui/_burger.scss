@@ -80,6 +80,16 @@
 		}
 	}
 
+	&__flags {
+		@include m.flexCenter(row);
+		gap: 2rem;
+	}
+
+	&__flag {
+		width: 2rem;
+		cursor: pointer;
+	}
+
 	// FUNCIONALIDAD
 	&__checkbox:checked ~ &__background {
 		transform: scale(300);
