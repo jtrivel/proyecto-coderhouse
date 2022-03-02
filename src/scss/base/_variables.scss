@@ -1,9 +1,16 @@
 // Colors
 $black: rgba(0, 0, 0, 0.5);
-$white: hsl(0, 0%, 100%);
+$white: rgb(255, 255, 255);
 $blackT: rgba(0, 0, 0, 0.3);
-$primaryColor: #333;
+$primaryColor: rgb(51, 51, 51);
 $whiteGlass: rgba(255, 255, 255, 0.1);
+$redColor: rgb(227, 27, 35);
+$fb: rgb(78, 113, 186);
+$twitter: rgb(0, 172, 238);
+$ig: rgb(193, 53, 132);
+$yt: rgb(222, 9, 36);
+
+$mainShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 // Media queries
 $xsmall: 320px;

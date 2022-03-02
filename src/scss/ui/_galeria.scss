@@ -1,10 +1,12 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
+@use '../base/typography';
 
 .galeria {
 	display: grid;
 	place-items: center;
 	overflow-x: hidden;
+	padding: 1rem 0;
 
 	&__grid {
 		min-height: 100vh;
@@ -25,9 +27,7 @@
 	&__box {
 		overflow: hidden;
 		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		@include m.flexCenter(row);
 
 		&:nth-child(1) {
 			grid-column: 1/2;
@@ -82,16 +82,7 @@
 	&__heading {
 		align-self: start;
 		justify-self: start;
-		position: relative;
-		&::before {
-			position: absolute;
-			content: '';
-			width: 100%;
-			height: 2px;
-			background-color: v.$white;
-			bottom: 1rem;
-			left: 0;
-		}
+		@extend .fs-600;
 	}
 
 	&__img {
@@ -115,10 +106,7 @@
 		border: 1px solid transparent;
 		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 		background-color: v.$black;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		@include m.flexCenter(column);
 		gap: 1rem;
 		transform: scale(0);
 		transition: all 250ms ease-in;
@@ -146,9 +134,7 @@
 	}
 
 	&__share {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		@include m.flexCenter(row);
 		gap: 2rem;
 		cursor: pointer;
 		font-size: 1.4rem;
@@ -165,6 +151,10 @@
 
 	&__heart {
 		cursor: pointer;
+		transition: all 250ms ease-in-out;
+		&:hover {
+			transform: scale(1.2);
+		}
 	}
 
 	&__text,
@@ -186,7 +176,7 @@
 	}
 
 	#like:checked ~ &__label &__heart {
-		color: rgb(227, 27, 35);
+		color: v.$redColor;
 	}
 
 	#like:checked ~ &__text {
@@ -196,14 +186,14 @@
 	#like:checked ~ &__text2 {
 		display: block;
 	}
-	///galeria box 2
+	///galeria box 1
 
 	#like2 {
 		display: none;
 	}
 
 	#like2:checked ~ &__label &__heart {
-		color: rgb(227, 27, 35);
+		color: v.$redColor;
 	}
 
 	#like2:checked ~ &__text {
@@ -213,14 +203,14 @@
 	#like2:checked ~ &__text2 {
 		display: block;
 	}
-	///galeria box 3
+	///galeria box 2
 
 	#like3 {
 		display: none;
 	}
 
 	#like3:checked ~ &__label &__heart {
-		color: rgb(227, 27, 35);
+		color: v.$redColor;
 	}
 
 	#like3:checked ~ &__text {
@@ -231,14 +221,14 @@
 		display: block;
 	}
 
-	///galeria box 4
+	///galeria box 3
 
 	#like4 {
 		display: none;
 	}
 
 	#like4:checked ~ &__label &__heart {
-		color: rgb(227, 27, 35);
+		color: v.$redColor;
 	}
 
 	#like4:checked ~ &__text {
@@ -248,14 +238,14 @@
 	#like4:checked ~ &__text2 {
 		display: block;
 	}
-	///galeria box 5
+	///galeria box 4
 
 	#like5 {
 		display: none;
 	}
 
 	#like5:checked ~ &__label &__heart {
-		color: rgb(227, 27, 35);
+		color: v.$redColor;
 	}
 
 	#like5:checked ~ &__text {
@@ -265,5 +255,301 @@
 	#like5:checked ~ &__text2 {
 		display: block;
 	}
+	///galeria box 5
+
+	#like6 {
+		display: none;
+	}
+
+	#like6:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like6:checked ~ &__text {
+		display: none;
+	}
+
+	#like6:checked ~ &__text2 {
+		display: block;
+	}
 	///galeria box 6
+
+	#like7 {
+		display: none;
+	}
+
+	#like7:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like7:checked ~ &__text {
+		display: none;
+	}
+
+	#like7:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 7
+
+	#like8 {
+		display: none;
+	}
+
+	#like8:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like8:checked ~ &__text {
+		display: none;
+	}
+
+	#like8:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 8
+
+	#like9 {
+		display: none;
+	}
+
+	#like9:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like9:checked ~ &__text {
+		display: none;
+	}
+
+	#like9:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 9
+
+	#like10 {
+		display: none;
+	}
+
+	#like10:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like10:checked ~ &__text {
+		display: none;
+	}
+
+	#like10:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 10
+
+	#like11 {
+		display: none;
+	}
+
+	#like11:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like11:checked ~ &__text {
+		display: none;
+	}
+
+	#like11:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 11
+
+	#like12 {
+		display: none;
+	}
+
+	#like12:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like12:checked ~ &__text {
+		display: none;
+	}
+
+	#like12:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 12
+
+	#like13 {
+		display: none;
+	}
+
+	#like13:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like13:checked ~ &__text {
+		display: none;
+	}
+
+	#like13:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 13
+
+	#like14 {
+		display: none;
+	}
+
+	#like14:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like14:checked ~ &__text {
+		display: none;
+	}
+
+	#like14:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 14
+
+	#like15 {
+		display: none;
+	}
+
+	#like15:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like15:checked ~ &__text {
+		display: none;
+	}
+
+	#like15:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 15
+
+	#like16 {
+		display: none;
+	}
+
+	#like16:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like16:checked ~ &__text {
+		display: none;
+	}
+
+	#like16:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 16
+
+	#like17 {
+		display: none;
+	}
+
+	#like17:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like17:checked ~ &__text {
+		display: none;
+	}
+
+	#like17:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 17
+
+	#like18 {
+		display: none;
+	}
+
+	#like18:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like18:checked ~ &__text {
+		display: none;
+	}
+
+	#like18:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 18
+
+	#like19 {
+		display: none;
+	}
+
+	#like19:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like19:checked ~ &__text {
+		display: none;
+	}
+
+	#like19:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 19
+
+	#like20 {
+		display: none;
+	}
+
+	#like20:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like20:checked ~ &__text {
+		display: none;
+	}
+
+	#like20:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 20
+
+	#like21 {
+		display: none;
+	}
+
+	#like21:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like21:checked ~ &__text {
+		display: none;
+	}
+
+	#like21:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 21
+
+	#like22 {
+		display: none;
+	}
+
+	#like22:checked ~ &__label &__heart {
+		color: v.$redColor;
+	}
+
+	#like22:checked ~ &__text {
+		display: none;
+	}
+
+	#like22:checked ~ &__text2 {
+		display: block;
+	}
+	///galeria box 22
+
+	&__btn {
+		@include m.btn-2(v.$white, v.$whiteGlass);
+		margin-top: 4rem;
+		border: 1px solid transparent;
+		transition: all 250ms ease-in-out;
+	}
 }

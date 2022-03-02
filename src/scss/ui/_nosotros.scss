@@ -7,13 +7,11 @@
 
 	&__content {
 		max-width: 100rem;
-		display: grid;
 	}
 
 	&__title {
 		@extend .fs-600;
-		align-self: start;
-		justify-self: start;
+		display: inline-block;
 	}
 
 	&__text {

@@ -49,18 +49,18 @@
 	&--nosotros {
 		@extend .landing;
 		background-image: linear-gradient(to bottom, v.$black, v.$black),
-			url(../images/nosotrosBg.jpg);
+			url(../images/backgrounds/nosotrosBg.jpg);
 	}
 
 	&--tour {
 		@extend .landing;
 		background-image: linear-gradient(to bottom, v.$black, v.$black),
-			url(../images/tourBg.jpg);
+			url(../images/backgrounds/tourBg.jpg);
 	}
 
 	&--contacto {
 		@extend .landing;
 		background-image: linear-gradient(to bottom, v.$black, v.$black),
-			url(../images/contactoBg.jpg);
+			url(../images/backgrounds/contactoBg.jpg);
 	}
 }

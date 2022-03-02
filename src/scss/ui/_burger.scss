@@ -17,9 +17,7 @@
 		right: 2rem;
 		top: 2rem;
 		z-index: 2000;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include m.flexCenter(row);
 		cursor: pointer;
 	}
 

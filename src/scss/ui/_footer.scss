@@ -50,9 +50,7 @@
 	}
 
 	&__socials {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include m.flexCenter(row);
 		gap: 3rem;
 		width: 100%;
 		@media (min-width: 450px) {
@@ -64,9 +62,7 @@
 		width: 1.6rem;
 		height: 1.6rem;
 		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		@include m.flexCenter(row);
 		cursor: pointer;
 		&::after {
 			position: absolute;
@@ -75,7 +71,57 @@
 			height: 3rem;
 			border: v.$whiteGlass 1px solid;
 			border-radius: 50%;
-			box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+			box-shadow: v.$mainShadow;
+			z-index: -1;
+			transition: all 250ms ease-in-out;
+		}
+
+		&:nth-child(1) {
+			transition: all 250ms ease-in-out;
+			&:hover {
+				color: v.$fb;
+			}
+
+			&:hover::after {
+				border: 1px solid v.$fb;
+				background-color: transparent;
+			}
+		}
+
+		&:nth-child(2) {
+			transition: all 250ms ease-in-out;
+			&:hover {
+				color: v.$twitter;
+			}
+
+			&:hover::after {
+				border: 1px solid v.$twitter;
+				background-color: transparent;
+			}
+		}
+
+		&:nth-child(3) {
+			transition: all 250ms ease-in-out;
+			&:hover {
+				color: v.$ig;
+			}
+
+			&:hover::after {
+				border: 1px solid v.$ig;
+				background-color: transparent;
+			}
+		}
+
+		&:nth-child(4) {
+			transition: all 250ms ease-in-out;
+			&:hover {
+				color: v.$yt;
+			}
+
+			&:hover::after {
+				border: 1px solid v.$yt;
+				background-color: transparent;
+			}
 		}
 	}
 
@@ -83,7 +129,10 @@
 		color: v.$white;
 		text-decoration: none;
 		position: relative;
-		white-space: nowrap;
+		white-space: normal;
+		@include m.tablet {
+			white-space: nowrap;
+		}
 		font-size: 1.4rem;
 
 		@media (min-width: 450px) {
@@ -108,12 +157,16 @@
 		}
 	}
 
+	&__box:nth-child(4) &__link {
+		&::before {
+			width: 0;
+		}
+	}
+
 	&__attribution {
 		margin-top: 4rem;
 		padding-top: 2rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		@include m.flexCenter(row);
 	}
 
 	&__copyright {
